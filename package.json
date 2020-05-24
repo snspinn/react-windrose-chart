@@ -70,7 +70,7 @@
     "@storybook/addon-actions": "^5.3.19",
     "@storybook/addon-console": "^1.2.1",
     "@storybook/addon-links": "^5.3.19",
-    "@storybook/addon-notes": "^5.3.18",
+    "@storybook/addon-notes": "^5.3.19",
     "@storybook/react": "^5.3.18",
     "@storybook/storybook-deployer": "^2.8.5",
     "babel-core": "^7.0.0-bridge.0",
