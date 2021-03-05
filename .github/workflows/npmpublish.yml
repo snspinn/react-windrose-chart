@@ -36,25 +36,3 @@ jobs:
         env:
           CI: true
           NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
-
-  publish-gpr:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: "Setup actions"
-        uses: actions/checkout@v1
-      - name: "npm/registry setup"
-        uses: actions/setup-node@v1
-        with:
-          node-version: 12
-          registry-url: https://npm.pkg.github.com/
-          scope: '@snspinn'
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-      - run: npm ci
-      - name: "Publish to Github Package Registry"
-        run: |
-          echo "registry=https://npm.pkg.github.com/snspinn" >> ~/.npmrc
-          npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
