@@ -28,7 +28,7 @@ jobs:
       - name: "Publish to Node Package Manager"
         run: |
           npm config set //registry.npmjs.org/:_authToken=$NODE_AUTH_TOKEN
-          npm config set scope "@eunchurn"
+          npm config set scope "@snspinn"
           npm config list
           echo "//registry.npmjs.org/:_authToken=${{secrets.NPM_AUTH_TOKEN}}" > ~/.npmrc
           npm publish --access public
@@ -47,13 +47,13 @@ jobs:
         with:
           node-version: 12
           registry-url: https://npm.pkg.github.com/
-          scope: '@eunchurn'
+          scope: '@snspinn'
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
       - run: npm ci
       - name: "Publish to Github Package Registry"
         run: |
-          echo "registry=https://npm.pkg.github.com/eunchurn" >> ~/.npmrc
+          echo "registry=https://npm.pkg.github.com/snspinn" >> ~/.npmrc
           npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
