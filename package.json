@@ -1,6 +1,6 @@
 {
   "name": "@snspinn/react-windrose-chart",
-  "version": "0.1.8-7",
+  "version": "0.1.9-0",
   "description": "React Wind Rose Chart Component (D3js implemented SVG rendering)",
   "main": "dist/index.js",
   "files": [
@@ -14,7 +14,7 @@
   "author": "Samuel Spinn <samuel.spinn@gmail.com> (https://gitub.com/snspinn)",
   "license": "MIT",
   "bugs": {
-    "url": "github.com/snspinn/react-windrose-chart.git/issues"
+    "url": "https://github.com/snspinn/react-windrose-chart.git/issues"
   },
   "homepage": "https://github.com/snspinn/react-windrose-chart#readme",
   "keywords": [
