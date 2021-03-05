@@ -51,15 +51,12 @@ class Chart extends React.Component {
       const z = d3
         .scaleOrdinal()
         .range([
-          "#8e44ad",
-          "#4242f4",
+          "#9edf9e",
+          "#657cf2",
           "#42c5f4",
-          "#42f4ce",
-          "#42f456",
-          "#adf442",
-          "#f4e242",
-          "#f4a142",
-          "#f44242",
+          "#f2d10b",
+          "#ab55e7",
+          "#e75555"
         ]);
       x.domain(data.map(d => d.angle));
       y.domain([
