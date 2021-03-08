@@ -92,7 +92,7 @@ class Chart extends React.Component {
             .padRadius(innerRadius),
         )
         .attr("transform", () => `rotate(${angleOffset})`);
-      const label = g
+      const label = g // Add direction labels and rotated around the circle
         .append("g")
         .selectAll("g")
         .data(data)
@@ -104,16 +104,16 @@ class Chart extends React.Component {
           d =>
             `rotate(${((x(d.angle) + x.bandwidth() / 2) * 180) /
               Math.PI -
-              (90 - angleOffset)})translate(${outerRadius + 30},0)`,
+              (90 - angleOffset)})translate(${outerRadius + 40},0)`,
         );
-      label
+      label // Edit labels so that they are aligned perpendicular to the circle, at their position around the circle.
         .append("text")
         // eslint-disable-next-line no-confusing-arrow
         .attr("transform", d =>
-          (x(d.angle) + x.bandwidth() / 2 + Math.PI / 2) %
-          (2 * Math.PI < Math.PI)
-            ? "rotate(90)translate(0,16)"
-            : "rotate(-90)translate(0,-9)",
+          (x(d.angle) + x.bandwidth() / 2 + Math.PI / 2 ) % //??
+          (Math.PI)
+            ? "rotate(90)translate(0,20)"
+            : "rotate(-90)translate(0,-5)",
         )
         .text(d => d.angle)
         .style("font-size", 14);
@@ -163,8 +163,8 @@ class Chart extends React.Component {
         .attr(
           "transform",
           (d, i) =>
-            `translate(${outerRadius + 0},${-outerRadius +
-              40 +
+            `translate(${outerRadius + 50},${-outerRadius +
+              10 +
               (i - (columns.length - 1) / 2) * 20})`,
         );
       legend
