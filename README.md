@@ -33,19 +33,19 @@ const data = {
   data: [
     {
       angle: "N  ",
-      "0-1": 0.5,
+      "0-10": 0.5,
       /* ... */
-      "6-7": 0.2,
-      "7+": 0.1,
+      "40-50": 0.2,
+      "50+": 0.1,
       total: 4.9
     } /* ... */
   ],
   columns: [
     "angle",
-    "0-1",
+    "0-10",
     /* ... */
-    "6-7",
-    "7+"
+    "40-50",
+    "50+"
   ]
 };
 
@@ -128,7 +128,7 @@ const directionCharacter = classifyDir(270);
 - `yarn build:watch`: build watch mode.
 - `yarn dist`: distribution [lerna](https://lerna.js.org) for managing javascript projects with multiple packages.
 - `yarn start`: build the wind rose chart component and start storybook with this.
-- `yarn test`: testing javasciript code with [jest](https://jestjs.io/) `BABEL_ENV=test`
+- `yarn test`: testing javascript code with [jest](https://jestjs.io/) `BABEL_ENV=test`
 
 ## Real-Time
 
