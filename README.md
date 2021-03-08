@@ -1,15 +1,15 @@
 # Windrose Chart Component
 
-![Node.js Package](https://github.com/eunchurn/react-windrose-chart/workflows/Node.js%20Package/badge.svg?branch=master) [![Greenkeeper badge](https://badges.greenkeeper.io/eunchurn/react-windrose-chart.svg)](https://greenkeeper.io/) ![npm](https://img.shields.io/npm/dw/react-windrose-chart) [![codecov](https://codecov.io/gh/eunchurn/react-windrose-chart/branch/master/graph/badge.svg)](https://codecov.io/gh/eunchurn/react-windrose-chart) ![NPM](https://img.shields.io/npm/l/react-windrose-chart) [![npm version](https://badge.fury.io/js/react-windrose-chart.svg)](https://badge.fury.io/js/react-windrose-chart) [![GitHub Package Registry version](https://img.shields.io/github/v/release/eunchurn/react-windrose-chart.svg?label=GPR&logo=github)](https://github.com/eunchurn/react-windrose-chart/packages/54428) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-[**Storybook**](https://eunchurn.github.io/react-windrose-chart/)
 
 ## Features
 
 ![react-windrose-chart](./doc/images/react-windrose-chart.png)
 
 - [D3js](https://d3js.org/) (Javascript library for manipulating documents based on data) implemented SVG rendering
-- Inspired from [ssmaroju](https://bl.ocks.org/ssmaroju)'s [Wind Rose Plot](https://bl.ocks.org/ssmaroju/96af159c1872c2928a972c441bccaf50)
+- Forked from https://github.com/eunchurn/react-windrose-chart
+  -- Inspired from [ssmaroju](https://bl.ocks.org/ssmaroju)'s [Wind Rose Plot](https://bl.ocks.org/ssmaroju/96af159c1872c2928a972c441bccaf50)
 
 ## Installation
 
@@ -71,14 +71,12 @@ check [sample data](stories/data.json)
 
 |Name|Type|Required|Description|Default|
 |:--:|:--:|:-----:|:----------|:------|
-|**0-1**|`Number`|`Required`| Frequency of 0-1 m/sec ||
-|**1-2**|`Number`|`Required`| Frequency of 1-2 m/sec ||
-|**2-3**|`Number`|`Required`| Frequency of 2-3 m/sec ||
-|**3-4**|`Number`|`Required`| Frequency of 3-4 m/sec ||
-|**4-5**|`Number`|`Required`| Frequency of 4-5 m/sec ||
-|**5-6**|`Number`|`Required`| Frequency of 5-6 m/sec ||
-|**6-7**|`Number`|`Required`| Frequency of 6-7 m/sec ||
-|**7+**|`Number`|`Required`| Frequency of 7+ m/sec ||
+|**0-10**|`Number`|`Required`| Frequency of 0-10 km/hr ||
+|**10-20**|`Number`|`Required`| Frequency of 10-20 km/hr ||
+|**20-30**|`Number`|`Required`| Frequency of 20-30 km/hr ||
+|**30-40**|`Number`|`Required`| Frequency of 30-40 km/hr ||
+|**40-50**|`Number`|`Required`| Frequency of 40-50 km/hr ||
+|**50+**|`Number`|`Required`| Frequency of 50+ m/sec ||
 |**angle**|`String`|`Required`| Wind direction `N`, `NNE`, `NE`, `ENE`, `E`, `ESE`, `SE`, `SSE`, `S`, `SSW`, `SW`, `WSW`, `W`, `WNW`, `NW`, `NNW`  ||
 |**total**|`Number`|`Required`| Sum of frequencies of this direction ||
 
@@ -91,7 +89,7 @@ import { caculateWindRose } from "react-windrose-chart";
 
 const data = {
   direction: [270, 256, 240,...],
-  speed: [ 1.02, 0.85, 0.98,...]
+  speed: [ 5.2, 22.8, 30.1,...]
 }
 
 const windRoseData = calculateWindRose(data);
@@ -130,11 +128,6 @@ const directionCharacter = classifyDir(270);
 - `yarn start`: build the wind rose chart component and start storybook with this.
 - `yarn test`: testing javascript code with [jest](https://jestjs.io/) `BABEL_ENV=test`
 
-## Real-Time
-
-Real-Time chart data from Anemometer
-
-![realtime-chart](doc/images/realtime.gif)
 
 ## License
 
