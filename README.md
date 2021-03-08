@@ -8,13 +8,13 @@
 ![react-windrose-chart](./doc/images/react-windrose-chart.png)
 
 - [D3js](https://d3js.org/) (Javascript library for manipulating documents based on data) implemented SVG rendering
-- A simplied fork of https://github.com/eunchurn/react-windrose-chart (Who was in turn inspired by [ssmaroju](https://bl.ocks.org/ssmaroju)'s [Wind Rose Plot](https://bl.ocks.org/ssmaroju/96af159c1872c2928a972c441bccaf50))
+- A simplied fork of https://github.com/eunchurn/react-windrose-chart (who was in turn inspired by [ssmaroju](https://bl.ocks.org/ssmaroju)'s [Wind Rose Plot](https://bl.ocks.org/ssmaroju/96af159c1872c2928a972c441bccaf50))
 
 ## Installation
 **Not yet packages into a usable npm**
 
 ```bash
-cd your-project/src
+cd your-project/src/
 git clone
 ```
 
@@ -23,7 +23,7 @@ git clone
 ```javascript
 import React from "react";
 import styled from "styled-components";
-import { default as WindRose } from "./react-windrose-chart/WindRose";
+import { default as WindRose } from "./react-windrose-chart/src/WindRose";
 
 const Container = styled.div`
   width: 600px;
@@ -57,6 +57,28 @@ const App = () => (
 );
 ```
 
+## Example
+- The windrose defaults to zero data
+- The example data can be found in the `example/` directory
+- For the windrose above, use:
+```javascript
+import React from "react";
+import styled from "styled-components";
+import { default as WindRose } from "./react-windrose-chart/src/WindRose";
+import data from "./react-windrose-chart/src/example/windrose_data_1.json";
+
+const Container = styled.div`
+  width: 600px;
+  height: 600px;
+`;
+
+const App = () => (
+  <Container>
+    <WindRose data={data.data} columns={data.columns} />
+  </Container>
+);
+```
+
 ## Props
 
 |Name|Type|Required|Description|Default|
@@ -67,8 +89,6 @@ const App = () => (
 |**height**|`Number`|| container height, default value: `500`||
 
 ### `data` Object array
-
-check [sample data](stories/data.json)
 
 |Name|Type|Required|Description|Default|
 |:--:|:--:|:-----:|:----------|:------|
@@ -86,7 +106,7 @@ check [sample data](stories/data.json)
 - Classifying direction function only:
 
 ```javascript
-import { classifyDir } from "./react-windrose-chart/util";
+import { classifyDir } from "./react-windrose-chart/src/util";
 
 const directionCharacter = classifyDir(270);
 // Return : 'W'
